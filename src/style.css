@@ -1,0 +1,58 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: sans-serif;
+  padding: 20px;
+}
+.red {
+  color: red;
+}
+.green {
+  color: green;
+}
+.friends-list {
+  list-style: none;
+}
+.friend-card {
+  width: 330px;
+  margin-bottom: 10px;
+}
+.friend-card-wrapper {
+  padding: 5px 10px;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  border-radius: 10px;
+}
+.friend-card-wrapper:hover {
+  background: #dcceb4;
+}
+.friend-card img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+.friend-card h3 {
+  margin: 10px;
+}
+.friend-card p {
+  font-size: 14px;
+  margin: 10px;
+}
+.friend-card button {
+  width: fit-content;
+  height: fit-content;
+  background: orange;
+  outline: none;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 5px;
+}
+.friend-card-desc {
+  width: 190px;
+}
