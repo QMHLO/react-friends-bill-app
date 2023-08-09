@@ -1,18 +1,24 @@
 import React, { useState } from "react";
 import Button from "./Button";
 
-function FormSplit({ selectedFriend }) {
+function FormSplit({ selectedFriend, onSplitBill }) {
   const name = selectedFriend.name;
-  const upperCaseName = name.toUpperCase();
   const [bill, setBill] = useState("");
   const [paidByUser, setPaidByUser] = useState("");
   const paidByFriend = bill ? bill - paidByUser : "";
   const [whoIsPaying, setWhoIsPaying] = useState("user");
+
+  function handleSubmit(e) {
+    e.preventDefault();
+    if (!bill || !paidByUser) return;
+    onSplitBill(whoIsPaying === "user" ? paidByFriend : -paidByUser);
+  }
+
   return (
     <div className="form-split">
       <div className="form-split-block">
-        <form action="">
-          <h2>SPLIT A BILL WITH {upperCaseName}</h2>
+        <form action="" onSubmit={handleSubmit}>
+          <h2>SPLIT A BILL WITH {name}</h2>
           <div className="row">
             <label htmlFor="">Bill Value</label>
             <input type="text" value={bill} onChange={(e) => setBill(Number(e.target.value))} />
