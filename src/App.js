@@ -48,7 +48,6 @@ function App() {
   }
   return (
     <div>
-      <h1>Friend Bill App</h1>
       <div className="main">
         <div className="sidebar">
           <FriendsList friends={friends} onSelection={handleSelection} selectedFriend={selectedFriend} />
