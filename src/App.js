@@ -47,14 +47,16 @@ function App() {
     setSelectedFriend(null);
   }
   return (
-    <div className="main">
-      <h1>Friends Bill App</h1>
-      <div className="sidebar">
-        <FriendsList friends={friends} onSelection={handleSelection} selectedFriend={selectedFriend} />
-        {showAddFriend && <FormAddFriend onAddFriend={handleAddFriend} />}
-        <Button onClick={handleShowAddFriend}>{showAddFriend ? "Close" : "Add Friend"}</Button>
+    <div>
+      <h1>Friend Bill App</h1>
+      <div className="main">
+        <div className="sidebar">
+          <FriendsList friends={friends} onSelection={handleSelection} selectedFriend={selectedFriend} />
+          {showAddFriend && <FormAddFriend onAddFriend={handleAddFriend} />}
+          <Button onClick={handleShowAddFriend}>{showAddFriend ? "Close" : "Add Friend"}</Button>
+        </div>
+        {selectedFriend && <FormSplit selectedFriend={selectedFriend} onSplitBill={handleSplitBill} />}
       </div>
-      {selectedFriend && <FormSplit selectedFriend={selectedFriend} onSplitBill={handleSplitBill} />}
     </div>
   );
 }
